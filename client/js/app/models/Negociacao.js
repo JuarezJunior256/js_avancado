@@ -1,5 +1,6 @@
 class Negociacao{
  
+    //classe modelo para negociação 
      constructor(data, quantidade, valor){
          
          this._data = new Date(data.getTime());
@@ -8,7 +9,7 @@ class Negociacao{
          Object.freeze(this);
      }
 
-     obtemVolume(){
+     get volume(){
          return this._quantidade * this._valor;
      }
 
