@@ -15,6 +15,13 @@ class NegociacaoController{
 
         //metodo para atualizar a lista na view da tabela
         this._negociacoesViews.update(this._listaNegociacoes);
+
+        //instaciando classe mensagem
+        this._mensagem = new Mensagem();
+
+        //instanciando classe mensagemView
+        this._mensagemView = new MensagemView($('#mensagemView'));
+        this._mensagemView.update(this._mensagem);
     }
 
     //evento de click 
@@ -25,6 +32,11 @@ class NegociacaoController{
         this._listaNegociacoes.adiciona(this._criaNegociacao());
         //adicionando uma lista de negocições na view da tabela
         this._negociacoesViews.update(this._listaNegociacoes);
+        
+        //mensagem de confirmação adicionada
+        this._mensagem.texto= 'Negociçao adicionada com Sucesso';
+        this._mensagemView.update(this._mensagem);
+        
         this._limpaFormulario();//limpando formulário 
 
         
